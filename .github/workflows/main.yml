@@ -1,0 +1,30 @@
+name: remote ssh command
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: |
+          ls -la
+          rm -rf spring-simple-forum
+          git clone https://github.com/xinghua24/spring-simple-forum.git
+          cd spring-simple-forum/postgres
+          bash start-postgres.sh
+          cd ..
+          cd spring-simple-forum-ui
+          npm run build
+          cd ..
+          mvn package
+          cd target
+          java -jar  spring-simple-forum-0.0.1-SNAPSHOT.jar
+          
+          
