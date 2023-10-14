@@ -18,11 +18,18 @@ export default function Home() {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Spring Simple Forumx</h2>
+            <h2 className={styles.title}>Spring Simple Forum</h2>
+
+            <NavLink to={"/posts/new"}>
+                <button>Create New Post</button>
+            </NavLink>
             {data.map((item) =>
-                <div key={item.id}>
-                    <NavLink to={"/posts/" + item.id}>{item.title}</NavLink>
-                </div>
+
+                <NavLink to={"/posts/" + item.id}>
+                    <div key={item.id} className={styles.homePostTitle}>
+                        {item.title}
+                    </div>
+                </NavLink>
 
             )}
         </div>
