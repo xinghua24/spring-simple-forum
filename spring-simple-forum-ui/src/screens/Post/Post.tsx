@@ -6,7 +6,7 @@ function Post() {
     let { postId } = useParams();
 
     const { isLoading, isError, data } = useQuery(["posts", postId], () =>
-        axios.get("/posts/" + postId)
+        axios.get("/api/posts/" + postId)
             .then((res) => res.data));
 
     if (isLoading) {

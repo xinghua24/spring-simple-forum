@@ -6,7 +6,7 @@ import styles from './Home.module.css';
 export default function Home() {
 
     const { isLoading, isError, data } = useQuery(["todos"], () =>
-        axios.get("/posts")
+        axios.get("/api/posts")
             .then((res) => res.data));
 
     if (isLoading) {
@@ -18,7 +18,7 @@ export default function Home() {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Spring Simple Forum</h2>
+            <h2 className={styles.title}>Spring Simple Forumx</h2>
             {data.map((item) =>
                 <div key={item.id}>
                     <NavLink to={"/posts/" + item.id}>{item.title}</NavLink>
