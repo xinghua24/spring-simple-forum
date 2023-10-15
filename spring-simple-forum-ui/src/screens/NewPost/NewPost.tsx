@@ -60,7 +60,7 @@ export default function NewPost() {
         <>
             <h2>Create New Post</h2>
             <div className={styles.row}>
-                <InputText name="title" placeholder='title' value={title} onChange={handleTitleChange} size={40} />
+                <InputText className={styles.titleInput} name="title" placeholder='title' value={title} onChange={handleTitleChange} />
             </div>
             <div className={styles.row}>
                 <Editor value={content} onTextChange={(e) => setContent(e.htmlValue)} style={{ height: '320px' }} />

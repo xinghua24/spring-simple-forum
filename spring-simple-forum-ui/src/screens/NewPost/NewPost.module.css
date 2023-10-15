@@ -5,3 +5,7 @@
 Button {
     margin: 0.25em;
 }
+
+.titleInput {
+    width: 100%;
+}
