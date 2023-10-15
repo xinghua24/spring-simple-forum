@@ -4,9 +4,10 @@ import axios from 'axios';
 import { useRef, useState } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-import { InputTextarea } from 'primereact/inputtextarea';
 import { useNavigate } from 'react-router-dom';
 import { Toast } from 'primereact/toast';
+
+import { Editor } from 'primereact/editor';
 
 
 type PostInput = {
@@ -50,9 +51,6 @@ export default function NewPost() {
         setTitle(e.currentTarget.value)
     }
 
-    function handleContentChange(e: React.FormEvent<HTMLTextAreaElement>) {
-        setContent(e.currentTarget.value)
-    }
 
     function goHome() {
         return navigate("/")
@@ -65,7 +63,7 @@ export default function NewPost() {
                 <InputText name="title" placeholder='title' value={title} onChange={handleTitleChange} size={40} />
             </div>
             <div className={styles.row}>
-                <InputTextarea name="content" placeholder='content' rows={10} cols={40} value={content} onChange={handleContentChange} />
+                <Editor value={content} onTextChange={(e) => setContent(e.htmlValue)} style={{ height: '320px' }} />
             </div>
             <div className={styles.row}>
                 <Button label="Discard" type="submit" onClick={goHome} size="small" severity="warning" />

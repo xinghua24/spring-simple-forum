@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import styles from './Post.module.css';
 import { Button } from "primereact/button";
+import parse from 'html-react-parser';
 
 function Post() {
     const navigate = useNavigate();
@@ -24,11 +25,12 @@ function Post() {
         return navigate("/")
     }
 
+
     return (
         <>
             <Button icon="pi pi-arrow-left" rounded text severity="secondary" aria-label="Back" onClick={discardPost} />
             <h2 className={styles.postTitle}>{data.title}</h2>
-            <p>{data.content}</p>
+            <div>{parse(data.content)}</div>
         </>
     )
 }

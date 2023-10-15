@@ -14,10 +14,10 @@ public class Post {
     @Column(name = "ID", nullable = false, length = 36)
     private String id;
 
-    @Column(name = "TITLE", length = 40)
+    @Column(name = "TITLE", length = 255)
     private String title;
 
-    @Column(name = "CONTENT", length = 2047)
+    @Column(name = "CONTENT", columnDefinition ="text" )
     private String content;
 
     @Column(name = "CREATED")

@@ -47,7 +47,9 @@ class PostController {
     @PostMapping
     public ResponseEntity<Post> create(@RequestBody Post item) {
         try {
-            if(item.getTitle().isBlank() || item.getContent().isBlank()) {
+            if(item.getTitle() == null || item.getTitle().isBlank()
+                    || item.getContent() == null || item.getContent().isBlank()
+                    || item.getContent().length() > 5000) {
                 return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
             }
             if(item.getId() == null) {
