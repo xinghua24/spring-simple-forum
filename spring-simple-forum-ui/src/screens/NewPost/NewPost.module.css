@@ -1,4 +1,7 @@
 .row {
-    margin-top: 30px;
+    margin-top: 10px;
+}
 
+Button {
+    margin: 0.25em;
 }

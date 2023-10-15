@@ -11,6 +11,16 @@ import Home from './screens/Home/Home.tsx'
 import NewPost from './screens/NewPost/NewPost.tsx';
 const queryClient = new QueryClient()
 
+import { PrimeReactProvider } from 'primereact/api';
+
+//theme
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+
+//icon
+
+import 'primeicons/primeicons.css';
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,8 +39,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <PrimeReactProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </PrimeReactProvider>
   </React.StrictMode>,
 )

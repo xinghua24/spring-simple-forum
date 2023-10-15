@@ -47,6 +47,9 @@ class PostController {
     @PostMapping
     public ResponseEntity<Post> create(@RequestBody Post item) {
         try {
+            if(item.getTitle().isBlank() || item.getContent().isBlank()) {
+                return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+            }
             if(item.getId() == null) {
                 item.setId(UUID.randomUUID().toString());
             }
