@@ -7,7 +7,7 @@ import parse from 'html-react-parser';
 
 function Post() {
     const navigate = useNavigate();
-    let { postId } = useParams();
+    const { postId } = useParams();
 
     const { isLoading, isError, data } = useQuery(["posts", postId], () =>
         axios.get("/api/posts/" + postId)
