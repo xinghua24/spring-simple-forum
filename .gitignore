@@ -25,5 +25,8 @@ target/
 # postgres data
 /postgres/.postgres-data
 
+# mysql data
+/mysql/.mysql-data
+
 # ui build files
 /src/main/resources/static/**
