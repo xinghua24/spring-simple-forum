@@ -2,6 +2,7 @@ package com.xinghua24.controller;
 
 import com.xinghua24.model.Post;
 import com.xinghua24.repo.PostRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/posts")
+@Slf4j
 class PostController {
 
     @Autowired
@@ -22,6 +24,7 @@ class PostController {
 
     @GetMapping
     public ResponseEntity<List<Post>> getAll() {
+        log.info("handling get all posts");
         try {
             List<Post> items = new ArrayList<Post>();
 
@@ -35,6 +38,7 @@ class PostController {
 
     @GetMapping("{id}")
     public ResponseEntity<Post> getById(@PathVariable("id") String id) {
+        log.info("handling get post by id");
         Optional<Post> existingItemOptional = repository.findById(id);
 
         if (existingItemOptional.isPresent()) {
@@ -46,6 +50,7 @@ class PostController {
 
     @PostMapping
     public ResponseEntity<Post> create(@RequestBody Post item) {
+        log.info("handling create post");
         try {
             if(item.getTitle() == null || item.getTitle().isBlank()
                     || item.getContent() == null || item.getContent().isBlank()
@@ -66,6 +71,7 @@ class PostController {
 
     @PutMapping("{id}")
     public ResponseEntity<Post> update(@PathVariable("id") String id, @RequestBody Post item) {
+        log.info("handling update post");
         Optional<Post> existingItemOptional = repository.findById(id);
         if (existingItemOptional.isPresent()) {
             Post post = existingItemOptional.get();
@@ -81,6 +87,7 @@ class PostController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<HttpStatus> delete(@PathVariable("id") String id) {
+        log.info("handling delete post");
         try {
             repository.deleteById(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
