@@ -23,12 +23,12 @@ class PostController {
     PostRepository repository;
 
     @GetMapping
-    public ResponseEntity<List<Post>> getAll() {
+    public ResponseEntity<List<Post>> getRecentPosts() {
         log.info("handling get all posts");
         try {
             List<Post> items = new ArrayList<Post>();
 
-            repository.findAll().forEach(items::add);
+            repository.findRecentPosts().forEach(items::add);
 
             return new ResponseEntity<>(items, HttpStatus.OK);
         } catch (Exception e) {
