@@ -6,9 +6,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Post from './screens/Post/Post.tsx'
 import Home from './screens/Home/Home.tsx'
 import NewPost from './screens/NewPost/NewPost.tsx';
+import PostScreen from './screens/PostScreen/PostScreen.tsx';
+
 const queryClient = new QueryClient()
 
 import { PrimeReactProvider } from 'primereact/api';
@@ -17,8 +18,8 @@ import { PrimeReactProvider } from 'primereact/api';
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 //icon
-
 import 'primeicons/primeicons.css';
+
 
 
 const router = createBrowserRouter([
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/posts/:postId",
-    element: <Post />
+    element: <PostScreen />
   },
   {
     path: "/posts/new",

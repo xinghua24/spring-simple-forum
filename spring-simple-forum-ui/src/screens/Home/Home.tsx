@@ -7,7 +7,7 @@ import { Post } from '../../model/Post';
 
 export default function Home() {
 
-    const { isLoading, isError, data } = useQuery(["todos"], (): Promise<Post[]> =>
+    const { isLoading, isError, error, data } = useQuery(["todos"], (): Promise<Post[]> =>
         axios.get("/api/posts")
             .then((res) => res.data));
 
@@ -15,7 +15,11 @@ export default function Home() {
         return 'loading'
     }
     if (isError) {
-        return 'error'
+        if (error instanceof Error) {
+            return error.message
+        } else {
+            return 'unknown error'
+        }
     }
 
     return (
@@ -26,8 +30,8 @@ export default function Home() {
                 <Button label='Create New Post' />
             </NavLink>
             {data ? data.map((item) =>
-                <NavLink to={"/posts/" + item.id}>
-                    <div key={item.id} className={styles.homePostTitle}>
+                <NavLink to={"/posts/" + item.id} key={item.id}>
+                    <div className={styles.homePostTitle}>
                         {item.title}
                     </div>
                 </NavLink>
