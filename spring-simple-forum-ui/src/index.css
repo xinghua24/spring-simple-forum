@@ -34,12 +34,17 @@ h1 {
 
 a {
   text-decoration: none;
+  color: dodgerblue;
+}
+
+a:visited {
+  color: dodgerblue;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: azure;
   }
 
 }
