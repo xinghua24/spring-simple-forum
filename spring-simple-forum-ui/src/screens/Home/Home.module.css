@@ -17,15 +17,15 @@
     margin: 0.25em;
     padding: 1em;
     font-weight: bold;
-    background-color: linen;
-    border-color: linen;
+    background-color: var(--background-post);
+    border-color: var(--background-post);
     border-radius: 10px;
     border-style: solid;
 }
 
 .homePostTitle:hover {
-    background-color: aqua;
-    border-color: aqua;
+    background-color: var(--background-post-hover);
+    border-color: var(--background-post-hover);
     border-radius: 10px;
     border-style: solid;
 }
