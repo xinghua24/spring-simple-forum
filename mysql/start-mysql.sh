@@ -10,8 +10,8 @@ if [ $? -ne 0 ]; then
       -p 127.0.0.1:3306:3306 \
       -v ${PWD}/.mysql-data:/var/lib/mysql \
       mysql:latest
-    echo 'waitting for docker container to run...'
+    echo 'waiting for mysql to be up and running...'
     sleep 15
     echo 'run initialization script...'
-    cat initialization.sql | docker exec -i spring-simple-forum-mysql mysql -uroot -ppassword
+    cat initialization.sql | docker exec -i $NAME mysql -uroot -ppassword
 fi

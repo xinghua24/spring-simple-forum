@@ -10,19 +10,19 @@ Prerequisites:
 * jdk 17
 * maven
 
-Build UI
+1. Build UI
 ```bash
 cd spring-simple-forum-ui
 npm i
 npm run build
 ```
 
-Run mysql using Docker and run initialize script if not run already
+2. Run mysql using Docker and run initialization script if not run already
 ```bash
 bash ./mysql/start-mysql.sh
 ```
 
-Run SpringBoot application locally
+3. Run SpringBoot application locally
 ```bash
 mvn spring-boot:run -Dspring-boot.run.profiles=local
 ```
