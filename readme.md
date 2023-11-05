@@ -1,4 +1,7 @@
 # Spring Simple Forum
+Simple forum application build using SpringBoot and React.
+
+![Screenshot - MainPage](screenshots/MainPage.png)
 
 ## Build and Run Locally
 Prerequisites:
@@ -18,10 +21,12 @@ Run mysql using Docker
 bash mysql/start-mysql.sh
 ```
 
-Then run mysql/initialize.sql to initialize database. Skip this step if initialize script had run already.
+Then run mysql/initialize.sql to initialize database. Skip this step if initialize script had already run.
 
 Run SpringBoot application locally
 ```bash
 mvn spring-boot:run -Dspring-boot.run.profiles=local
 ```
+
+Navigate to http://localhost:8080
 
