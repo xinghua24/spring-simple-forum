@@ -13,6 +13,7 @@ Prerequisites:
 Build UI
 ```bash
 cd spring-simple-forum-ui
+npm i
 npm run build
 ```
 
