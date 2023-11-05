@@ -1,19 +1,27 @@
 # Spring Simple Forum
 
 ## Build and Run Locally
-run mysql using docker
-```bash
-bash mysql/run-mysql.sh
-```
-Then run initialize.sql to initialize database
+Prerequisites:
+* Docker
+* npm
+* jdk 17
+* maven
 
-Build react project
+Build UI
 ```bash
-cd ./spring-simple-forum-ui
+cd spring-simple-forum-ui
 npm run build
 ```
-Run SpringBoot application
+
+Run mysql using Docker
 ```bash
-mvn spring-boot:start
+bash mysql/start-mysql.sh
+```
+
+Then run mysql/initialize.sql to initialize database. Skip this step if initialize script had run already.
+
+Run SpringBoot application locally
+```bash
+mvn spring-boot:run -Dspring-boot.run.profiles=local
 ```
 
