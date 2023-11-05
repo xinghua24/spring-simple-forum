@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec -it $CONTAINER mysql -uroot -p
+docker exec -it spring-simple-forum-mysql mysql -uroot -p

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import Home from './screens/Home/Home.tsx'
@@ -22,7 +22,7 @@ import 'primeicons/primeicons.css';
 
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Home />,

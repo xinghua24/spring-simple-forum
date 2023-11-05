@@ -1,2 +1,2 @@
 #!/bin/bash
-docker logs $CONTAINER
+docker logs spring-simple-forum-postgres
