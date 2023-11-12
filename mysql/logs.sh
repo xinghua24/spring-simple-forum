@@ -1,2 +1,3 @@
 #!/bin/bash
-docker logs spring-simple-forum-mysql
+CONTAINERNAME=spring-simple-forum-mysql
+docker logs $CONTAINERNAME

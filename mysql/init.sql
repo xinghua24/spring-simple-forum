@@ -1,4 +1,4 @@
-DROP DATABASE springforumsimple;
+DROP DATABASE IF EXISTS springforumsimple;
 CREATE DATABASE IF NOT EXISTS springforumsimple;
 use springforumsimple;
 
