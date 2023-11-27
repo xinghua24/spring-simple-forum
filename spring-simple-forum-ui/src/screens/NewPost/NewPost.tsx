@@ -9,7 +9,6 @@ import { Toast } from 'primereact/toast';
 
 import { Editor, EditorTextChangeEvent } from 'primereact/editor';
 
-
 type PostInput = {
     title: string,
     content: string

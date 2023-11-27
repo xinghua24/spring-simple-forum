@@ -1,0 +1,11 @@
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerBtn {
+    padding: 5px;
+    margin: 2px;
+    color: var(--prefered-link-color);
+}

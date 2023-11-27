@@ -4,6 +4,8 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './Home.module.css';
 import { Button } from 'primereact/button';
 import { Post } from '../../model/Post';
+import Header from '../../components/Header/Header';
+import Layout from '../../components/Layout/Layout';
 
 export default function Home() {
     const navigate = useNavigate();
@@ -28,10 +30,6 @@ export default function Home() {
     }
     return (
         <div className={styles.container}>
-            <header className={styles.headerRow}>
-                <h2 className={styles.title}>Spring Simple Forum</h2>
-                <Button label='Create New Post' onClick={navToNewPost} size="small" rounded />
-            </header>
             {data ? data.map((item) =>
                 <NavLink to={"/posts/" + item.id} key={item.id}>
                     <div className={styles.homePostTitle}>

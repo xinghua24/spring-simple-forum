@@ -19,23 +19,26 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 //icon
 import 'primeicons/primeicons.css';
+import Layout from './components/Layout/Layout.tsx';
 
-
-
-const router = createHashRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/posts/:postId",
-    element: <PostScreen />
-  },
-  {
-    path: "/posts/new",
-    element: <NewPost />
-  }
-]);
+const router = createHashRouter([{
+  path: "/",
+  element: <Layout />,
+  children: [
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/posts/:postId",
+      element: <PostScreen />
+    },
+    {
+      path: "/posts/new",
+      element: <NewPost />
+    }
+  ]
+}]);
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
