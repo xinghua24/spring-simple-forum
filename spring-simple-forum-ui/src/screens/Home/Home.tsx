@@ -1,14 +1,10 @@
 import axios from 'axios';
 import { useQuery } from 'react-query'
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Home.module.css';
-import { Button } from 'primereact/button';
 import { Post } from '../../model/Post';
-import Header from '../../components/Header/Header';
-import Layout from '../../components/Layout/Layout';
 
 export default function Home() {
-    const navigate = useNavigate();
 
     const { isLoading, isError, error, data } = useQuery(["todos"], (): Promise<Post[]> =>
         axios.get("/api/posts")
@@ -25,9 +21,6 @@ export default function Home() {
         }
     }
 
-    function navToNewPost() {
-        navigate('/posts/new')
-    }
     return (
         <div className={styles.container}>
             {data ? data.map((item) =>
