@@ -37,8 +37,8 @@ a {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --prefered-text-color: var(--primary-color);
-    color: var(--primary-color);
+    --prefered-link-color: var(--primary-color);
+    color: black;
     background-color: azure;
     --background-post: linen;
     --background-post-hover: aqua;
@@ -51,8 +51,8 @@ a {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --prefered-text-color: rgb(199, 188, 128);
-    color: var(--prefered-text-color);
+    --prefered-link-color: rgb(199, 188, 128);
+    color: var(--primary-300);
     background-color: #343434;
     --background-post: #666;
     --background-post-hover: rgb(37, 158, 158);

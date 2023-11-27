@@ -8,4 +8,8 @@
     padding: 5px;
     margin: 2px;
     color: var(--prefered-link-color);
+
+    &:focus {
+        box-shadow: none;
+    }
 }
